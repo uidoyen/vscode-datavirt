@@ -48,6 +48,7 @@ import { RestBasedDataSource } from './model/datasources/RestBasedDataSource';
 import { SalesForceDataSource } from './model/datasources/SalesForceDataSource';
 import { SAPGatewayBasedDataSource } from './model/datasources/SAPGatewayBasedDataSource';
 import { undeployCommand } from './commands/UndeployVDBCommand';
+import { testVDBCommand } from './commands/TestVDBCommand';
 
 export const DATASOURCE_TYPES: Map<string, DataSourceConfig> = new Map();
 export let dataVirtProvider : DataVirtNodeProvider;
@@ -105,6 +106,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand('datavirt.edit.schema', editSchemaCommand));
 	context.subscriptions.push(vscode.commands.registerCommand('datavirt.deploy', deployCommand));
 	context.subscriptions.push(vscode.commands.registerCommand('datavirt.undeploy', undeployCommand));
+	context.subscriptions.push(vscode.commands.registerCommand('datavirt.test.vdb', testVDBCommand));
 
 	languageServer.activate(context);
 }

@@ -41,6 +41,11 @@
 				"category": "dv"
 			},
 			{
+				"title": "Test Virtual Database",
+				"command": "datavirt.test.vdb",
+				"category": "dv"
+			},
+			{
 				"title": "Delete Virtual Database",
 				"command": "datavirt.delete.vdb",
 				"category": "dv"
@@ -160,6 +165,10 @@
 					"when": "false"
 				},
 				{
+					"command": "datavirt.test.vdb",
+					"when": "false"
+				},
+				{
 					"command": "datavirt.delete.vdb",
 					"when": "false"
 				},
@@ -224,6 +233,11 @@
 				{
 					"group": "dv@2",
 					"command": "datavirt.undeploy",
+					"when": "viewItem == dv.project"
+				},
+				{
+					"group": "dv_extra@1",
+					"command": "datavirt.test.vdb",
 					"when": "viewItem == dv.project"
 				},
 				{
@@ -339,11 +353,12 @@
 		"tslint": "gulp tslint"
 	},
 	"dependencies": {
+		"dockerode": "^3.2.0",
 		"js-base64": "^2.6.3",
 		"path": "^0.12.7",
 		"tmp": "^0.2.1",
-		"vscode-languageclient": "^6.1.3",
 		"vscode-kubernetes-tools-api": "^1.2.0",
+		"vscode-languageclient": "^6.1.3",
 		"yaml": "^1.10.0"
 	},
 	"devDependencies": {
